@@ -5,7 +5,7 @@ const app = express()
 app.use(express.static('public'))
 app.use(cookieParser())
 
-app.get('/', (req, res) => {
+app.get('https://cookie-reading.vercel.app/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html')
   if (req.cookies['cookieyes-consent']) {
     const set = 'set'
@@ -77,4 +77,5 @@ function filterBoolean(str) {
   return str === 'true'
 }
 
-app.listen(3001, () => console.log('Server running on port 3001'))
+module.exports = app
+// app.listen(3001, () => console.log('Server running on port 3001'))
