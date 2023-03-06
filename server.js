@@ -71,6 +71,7 @@ app.get('/cookies', (req, res) => {
   } else {
     console.log('Cookies are not set')
   }
+  res.send('Cookies read')
 })
 
 function filterBoolean(str) {
