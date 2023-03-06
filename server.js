@@ -5,7 +5,7 @@ const app = express()
 app.use(express.static('public'))
 app.use(cookieParser())
 
-app.get('/', (req, res) => {
+app.get('', (req, res) => {
   res.sendFile(__dirname + '/public/index.html')
   if (req.cookies['cookieyes-consent']) {
     const set = 'set'
