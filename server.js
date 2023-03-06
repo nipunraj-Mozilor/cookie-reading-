@@ -28,48 +28,48 @@ app.get('/', (req, res) => {
         'other',
       ].some((key) => filterBoolean(result[key]))
     ) {
-      res.send(
+      console.log(
         'The user has opted out of cookies, set strictly necessary cookies only'
       )
     } else {
       // Checking for user preferences
       // checking whether functional cookies are accepted
       if (filterBoolean(result['functional'])) {
-        res.send('The user has accepted functional cookies')
+        console.log('The user has accepted functional cookies')
       } else {
-        res.send('The user has NOT accepted functional cookies')
+        console.log('The user has NOT accepted functional cookies')
       }
 
       // checking whether analytics cookies are accepted
       if (filterBoolean(result['analytics'])) {
-        res.send('The user has accepted analytics cookies')
+        console.log('The user has accepted analytics cookies')
       } else {
-        res.send('The user has NOT accepted analytics cookies')
+        console.log('The user has NOT accepted analytics cookies')
       }
 
       // checking whether performance cookies are accepted
       if (filterBoolean(result['performance'])) {
-        res.send('The user has accepted performance cookies')
+        console.log('The user has accepted performance cookies')
       } else {
-        res.send('The user has NOT accepted performance cookies')
+        console.log('The user has NOT accepted performance cookies')
       }
 
       // checking whether advertisement cookies are accepted
       if (filterBoolean(result['advertisement'])) {
-        res.send('The user has accepted advertisement cookies')
+        console.log('The user has accepted advertisement cookies')
       } else {
-        res.send('The user has NOT accepted advertisement cookies')
+        console.log('The user has NOT accepted advertisement cookies')
       }
 
       // checking whether other cookies are accepted
       if (filterBoolean(result['other'])) {
-        res.send('The user has accepted other cookies')
+        console.log('The user has accepted other cookies')
       } else {
-        res.send('The user has NOT accepted other cookies')
+        console.log('The user has NOT accepted other cookies')
       }
     }
   } else {
-    res.send('Cookies are not set')
+    console.log('Cookies are not set')
   }
 })
 
