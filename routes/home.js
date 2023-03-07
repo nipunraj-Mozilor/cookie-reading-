@@ -1,12 +1,7 @@
 const express = require('express')
-const cookieParser = require('cookie-parser')
+const router = express.Router()
 
-const app = express()
-app.use(express.static('public'))
-app.use(cookieParser())
-
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + './public/index.html')
+router.get('/', async (req, res, next) => {
   if (req.cookies['cookieyes-consent']) {
     const set = 'set'
     const str = req.cookies['cookieyes-consent']
@@ -78,5 +73,4 @@ function filterBoolean(str) {
   return str === 'true'
 }
 
-// module.exports = app
-app.listen(3001, () => console.log('Server running on port 3001'))
+module.exports = router
