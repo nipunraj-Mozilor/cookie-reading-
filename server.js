@@ -1,11 +1,12 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
+const path = require('path') // require the 'path' module
 
 // const home = require('./routes/home')
 
 const app = express()
 
-app.use(express.static(__dirname + '/public/index.html'))
+// app.use(express.static(__dirname + '/public/index.html'))
 app.use(express.json())
 app.use(cookieParser())
 
@@ -13,7 +14,9 @@ app.use(cookieParser())
 // app.use('/home', home)
 
 app.get('/', async (req, res) => {
-  res.render(__dirname + './public')
+  // res.render(__dirname + './public')
+  const filePath = path.join(__dirname, 'public', 'index.html')
+  res.sendFile(filePath)
   if (req.cookies['cookieyes-consent']) {
     const set = 'set'
     const str = req.cookies['cookieyes-consent']
