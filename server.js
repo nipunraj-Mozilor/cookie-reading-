@@ -13,5 +13,5 @@ app.use(cookieParser())
 app.use('/home', home)
 
 // connection
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 8000
 app.listen(port, () => console.log(`Listening to port ${port}`))

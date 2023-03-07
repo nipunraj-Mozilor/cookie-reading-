@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-router.get('/', async (req, res, next) => {
-  res.render(__dirname + './public/index.html')
+router.get('/', async (req, res) => {
+  res.render(__dirname + './public')
   if (req.cookies['cookieyes-consent']) {
     const set = 'set'
     const str = req.cookies['cookieyes-consent']
